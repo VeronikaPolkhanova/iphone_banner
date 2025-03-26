@@ -1,0 +1,149 @@
+.button {
+  border-radius: 100px;
+  cursor: pointer;
+  &.selected {
+    border: 1px solid #ffffff;
+    background-color: #54535a;
+  }
+}
+
+.continue {
+  background-color: #ffffff;
+  color: #070b33;
+  border: none;
+  padding: 16px;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.switcher {
+  padding: 10px 50px 10px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border: 1px solid #24212e;
+  background-color: #24212e;
+}
+
+.label {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 16px;
+  margin: 0;
+  text-transform: uppercase;
+  text-align: start;
+}
+
+.sub-label {
+  color: #ffffff;
+  opacity: 70%;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+  text-align: start;
+}
+
+#year-label {
+  position: relative;
+  z-index: 2;
+  &::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    right: 1px;
+    height: 90%;
+    width: 20%;
+    background: linear-gradient(
+      270deg,
+      #00b5ff 0%,
+      #632af7 53.01%,
+      #ff96f4 100%
+    );
+    border-radius: 34px;
+    z-index: -1;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    right: 25px;
+    height: 50%;
+    width: 90%;
+    background: linear-gradient(270deg, #632af7 0%, #ff96f4 100%);
+    border-radius: 34px;
+    z-index: -1;
+    transform: rotate(178deg);
+  }
+  &.selected {
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.yearly {
+  position: relative;
+  & .yearly-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+  }
+}
+
+.best-offer-container {
+  position: absolute;
+  right: 24px;
+  top: -12px;
+}
+
+.best-offer {
+  position: relative;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 3px 15px;
+  box-sizing: border-box;
+  background: linear-gradient(90deg, #bc1fef 0%, #0035ff 100%);
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.495885);
+  z-index: 2;
+  border-radius: 100px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    bottom: -2px;
+    left: -2px;
+    right: -2px;
+    background: linear-gradient(
+      270deg,
+      #00b5ff 0%,
+      #632af7 53.01%,
+      #ff96f4 100%
+    );
+    border-radius: 34px;
+    z-index: -1;
+  }
+
+  &.selected {
+    background: #ffffff;
+    color: #070b33;
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  input[type="radio"] {
+    display: none;
+  }
+}
